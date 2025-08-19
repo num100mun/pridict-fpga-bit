@@ -50,3 +50,16 @@ class GraphPack:
         self.node_index["tile"][name] = idx
         self.nodes["tile"].append({"name": name, "type": type_, "x": x, "y": y})
         return idx
+
+    def add_edge(self, src: int, dst: int) -> None:
+        """Record a directed edge between two nodes.
+
+        Parameters
+        ----------
+        src, dst: int
+            Indices of the source and destination nodes.  These typically
+            refer to entries in ``nodes['tile']`` but the container does not
+            enforce the node type.
+        """
+
+        self.edges.append((src, dst))
